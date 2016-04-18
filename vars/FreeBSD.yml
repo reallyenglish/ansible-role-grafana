@@ -1,0 +1,7 @@
+__grafana_package_name: grafana2
+__grafana_root_dir: /usr/local/share/grafana
+__grafana_conf: /usr/local/etc/grafana2.conf
+__grafana_service: grafana2
+
+__grafana_config_data: /var/db/grafana2/
+__grafana_config_logs: /var/log/grafana2/

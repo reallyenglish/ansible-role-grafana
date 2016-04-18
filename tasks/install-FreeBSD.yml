@@ -1,0 +1,6 @@
+---
+
+- name: Install grafana
+  pkgng:
+    name: "{{ grafana_package_name }}"
+    state: present

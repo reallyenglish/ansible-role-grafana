@@ -1,0 +1,33 @@
+---
+# tasks file for ansible-role-grafana
+
+- include_vars: "{{ ansible_os_family }}.yml"
+
+- include: install-FreeBSD.yml
+  when: ansible_os_family == 'FreeBSD'
+
+- name: Create data dir
+  file:
+    path: "{{ grafana_config_data }}"
+    state: directory
+    owner: "{{ grafana_user }}"
+    group: "{{ grafana_group }}"
+
+- name: Create logs dir
+  file:
+    path: "{{ grafana_config_logs }}"
+    state: directory
+    owner: "{{ grafana_user }}"
+    group: "{{ grafana_group }}"
+
+- name: Configure grafana
+  template:
+    src: grafana.ini.j2
+    dest: "{{ grafana_conf }}"
+  notify: Restart grafana
+
+- name: Start grafana
+  service:
+    name: "{{ grafana_service }}"
+    enabled: yes
+    state: started

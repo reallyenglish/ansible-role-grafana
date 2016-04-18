@@ -1,0 +1,16 @@
+---
+# vars file for ansible-role-grafana
+
+grafana_package_name: "{{ __grafana_package_name }}"
+grafana_root_dir: "{{ __grafana_root_dir }}"
+grafana_conf: "{{ __grafana_conf }}"
+grafana_user: grafana
+grafana_group: grafana
+grafana_service: "{{ __grafana_service }}"
+
+grafana_config_data: "{{ __grafana_config_data }}"
+grafana_config_logs: "{{ __grafana_config_logs }}"
+grafana_config_http_port: 3000
+grafana_config_protocol: http
+grafana_config_admin_user: admin
+grafana_config_admin_password: admin
