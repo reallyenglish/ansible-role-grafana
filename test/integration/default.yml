@@ -1,6 +1,0 @@
-- hosts: all
-  roles:
-    - ansible-role-grafana
-  vars:
-    grafana_config_admin_user: root
-    grafana_config_admin_password: password
